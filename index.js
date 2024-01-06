@@ -13,6 +13,7 @@ const addMovie = (evt) =>{
     deleteBtn.addEventListener("click", deleteMovie)
     let movieTitle = document.createElement("span");
     movieTitle.textContent = inputField.value;
+    movieTitle.addEventListener("click", crossOffMovie)
     movie.appendChild(movieTitle);
     movie.appendChild(deleteBtn);
     movieList.appendChild(movie);
@@ -21,6 +22,11 @@ const addMovie = (evt) =>{
 
 const deleteMovie = (evt) => {
     evt.target.parentNode.remove();
+}
+
+const crossOffMovie = (evt) => {
+    evt.target.classList.toggle("checked");
+
 }
 
 //Event listeners
