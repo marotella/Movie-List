@@ -23,6 +23,7 @@ const addMovie = (evt) =>{
 const deleteMovie = (evt) => {
     evt.target.parentNode.remove();
     message.textContent = "Movie successfully deleted!"
+    revealMessage()
 }
 
 const crossOffMovie = (evt) => {
@@ -32,7 +33,13 @@ const crossOffMovie = (evt) => {
     } else {
         message.textContent = "Movie added back!"
     }
+    revealMessage()
 
+}
+
+const revealMessage = () =>{
+    message.classList.remove("hide")
+    setTimeout ( () => {message.classList.add("hide")}, 1000)
 }
 
 //Event listeners
