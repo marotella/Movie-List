@@ -22,20 +22,20 @@ const addMovie = (evt) =>{
 
 const deleteMovie = (evt) => {
     evt.target.parentNode.remove();
-    message.textContent = "Movie successfully deleted!"
+    message.textContent = evt.target.parentNode.querySelector("span").textContent+" successfully deleted!"
     revealMessage()
 }
 
 const crossOffMovie = (evt) => {
     evt.target.classList.toggle("checked");
     if (evt.target.classList.contains("checked") === true){
-        message.textContent = "Movie watched!"
+        message.textContent = evt.target.textContent + " watched!"
     } else {
-        message.textContent = "Movie added back!"
+        message.textContent = evt.target.textContent + " added back!"
     }
     revealMessage()
 
-}
+} 
 
 const revealMessage = () =>{
     message.classList.remove("hide")
